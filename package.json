@@ -1,8 +1,9 @@
 {
-  "name": "batch-promises",
+  "name": "@nordic-ui/batch-promises",
   "version": "0.0.4",
-  "description": "easily batch promises",
+  "description": "Easily batch promises",
   "main": "index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/_mocha test"
   },
