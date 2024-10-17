@@ -5,11 +5,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "!dist/__tests__/*"
   ],
   "scripts": {
     "build": "tsc",
-    "test": "mocha test",
+    "test": "vitest",
     "type-check": "tsc --noEmit"
   },
   "repository": {
@@ -28,7 +29,8 @@
   "homepage": "https://github.com/Nicktho/batch-promises#readme",
   "devDependencies": {
     "@total-typescript/tsconfig": "^1.0.4",
-    "mocha": "^10.7.3",
-    "typescript": "^5.6.3"
+    "@types/node": "^22.7.6",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
   }
 }

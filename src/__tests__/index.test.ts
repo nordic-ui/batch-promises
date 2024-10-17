@@ -1,10 +1,9 @@
-'use strict';
+import assert from "assert";
 
-const assert = require('assert');
-const batchPromises = require('./index.js');
+import batchPromises from "../index.js";
 
-describe('batchPromises', () => {
-  it('should return an array of results', () => {
+describe("batchPromises", () => {
+  it("should return an array of results", () => {
     return batchPromises(
       2,
       [1, 2, 3, 4, 5],
@@ -19,7 +18,7 @@ describe('batchPromises', () => {
     });
   });
 
-  it('should work with a promise returning an array', () => {
+  it("should work with a promise returning an array", () => {
     return batchPromises(
       2,
       Promise.resolve([1, 2, 3, 4, 5]),
@@ -34,7 +33,7 @@ describe('batchPromises', () => {
     });
   });
 
-  it('should batch promises', () => {
+  it("should batch promises", () => {
     let mostConcurrent = 0;
     let currentBatch = 0;
 
@@ -57,9 +56,9 @@ describe('batchPromises', () => {
     });
   });
 
-  it('should reject on an error and halt execution', () => {
+  it("should reject on an error and halt execution", () => {
     let highestPromise;
-    const expectedError = new Error('something went wrong');
+    const expectedError = new Error("something went wrong");
 
     return batchPromises(
       2,
