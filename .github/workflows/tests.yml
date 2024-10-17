@@ -1,0 +1,19 @@
+name: "Tests"
+
+on: push
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 👈 Required to retrieve git history
+      - name: Testing
+        env:
+          CI: true
+        run: |
+          yarn install --frozen-lockfile
+          yarn test
+          yarn type-check
